@@ -1,0 +1,52 @@
+<?php
+    echo "_";
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+    <title>&dagger;Aquin's Great Games&dagger;</title>
+    <link rel="stylesheet" type="text/css" href="OfficeDesk.scss" />
+    <script>
+        function mouseOver(idTag)
+        {
+            document.getElementById(idTag).style.visibility = "visible";
+        }
+        function mouseOut(idTag) {
+            document.getElementById(idTag).style.visibility = "hidden";
+        }
+        function mouseUp(new_page) {
+            window.location.href = new_page;
+        }
+    </script>
+</head>
+<body>
+    <div onmouseup="mouseUp('iOS_Pages/iOS_Menu.php')" onmouseover="mouseOver('iOS_Highlight')" onmouseout="mouseOut('iOS_Highlight')" style="background-image:url('images/ios_menu_screen.png'); background-size:cover; position:relative; top:50px; right:-100px; width:310px; height:400px; float:left;">
+        <div id="iOS_Highlight" style=" pointer-events:none; visibility:hidden; position:relative; top:0px; right:0px; width:310px; height:420px;">
+            <img src="Images/iOS_Screen_Highlight.png" style="height:400px; max-width:100%" />
+        </div>
+    </div>
+    <div onmouseup="mouseUp('Checkerboard.php')" onmouseover="mouseOver('CB_Highlight')" onmouseout="mouseOut('CB_Highlight')" style="background-image:url('images/checker_board.png'); background-size:cover; position:relative; top:200px; right:-200px; width:600px; height:600px; box-shadow:5px 5px 15px #000000; float:left;">
+        <div id="CB_Highlight" style=" pointer-events:none; visibility:hidden; position:relative; top:0px; right:0px; width:600px; height:600px;">
+            <img src="Images/Checkerboard_Highlight.png" style="height:100%; width:100%" />
+        </div>
+    </div>
+    <div onmouseup="mouseUp('Dinaki_Adventures.php')" onmouseover="mouseOver('BB_Highlight')" onmouseout="mouseOut('BB_Highlight')" style="background-image:url('Images/Blue_Book.png'); background-size:contain; position:relative; top:200px; right:00px; width:600px; height:650px; float:right; background-repeat:no-repeat;">
+        <div id="BB_Highlight" style=" pointer-events:none; visibility:hidden; position:relative; top:0px; right:20px; width:585px; height:650px; float:right;">
+            <img src="Images/BB_Highlight.png" style="height:100%; width:100%" />
+        </div>
+    </div>
+    <div onmouseup="mouseUp('PokeGame.php')" onmouseout="mouseOut('PB_Highlight')" onmouseover="mouseOver('PB_Highlight')" style="background-image:url('Images/Pokeball.png'); background-size:contain; position:relative; top:0px; right:0px; width:250px; height:250px; float:right; background-repeat:no-repeat;">
+        <div id="PB_Highlight" style="visibility:hidden; pointer-events:none; position:relative; top:0px; right:0px; width:220px; height:220px;">
+            <img src="Images/Pokeball_Highlight.png" style="height:100%; width:100%" />
+        </div>
+    </div>
+    <div onmouseup="mouseUp('Canvas.php')" onmouseout="mouseOut('NB_Highlight')" onmouseover="mouseOver('NB_Highlight')" style="background-image:url('Images/Notepad.png'); background-size:cover; position:relative; top:250px; left:-650px; width:200px; height:300px; float:left; box-shadow:5px 10px 15px #000000; background-repeat:no-repeat;">
+        <div id="NB_Highlight" style="visibility:hidden; pointer-events:none; position:relative; top:0px; left:0px; width:200px; height:305px; float:left;">
+            <img src="Images/Notepad_Highlight.png" style="height:100%; width:100%" />
+        </div>
+    </div>
+</body>
+</html>
