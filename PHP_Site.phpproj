@@ -33,11 +33,13 @@
     <Compile Include="iOS_Pages\iOS_Menu.php" />
     <Compile Include="index.php" />
     <Compile Include="Hash_Tables.php" />
+    <Compile Include="ProjectsPage.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ObjectLibrary.js" />
     <Content Include="PokeGame.php" />
     <Content Include="OfficeDesk.scss" />
+    <Content Include="ProjectPageJs.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="iOS_Pages\" />

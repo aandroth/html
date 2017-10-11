@@ -1,6 +1,14 @@
 <?php
     echo "_";
 ?>
+</*
+ ProjectsPage presents my AIE projects
+ *
+ * ProjectsPage will be a group of circles, each of which contain an image that represents that project
+ * 
+ * @version 1.0
+ * @author Aquin
+ */>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,6 +18,7 @@
     <title>&dagger;Aquin's Great Games&dagger;</title>
     <link rel="stylesheet" type="text/css" href="OfficeDesk.scss" />
     <script src="ObjectLibrary.js" ></script>
+    <script src="ProjectPageJs.js" ></script>
     <script>
         var startTime = (new Date()).getTime();
     </script>
@@ -17,9 +26,7 @@
 <body>
     <div>
         <p>
-            This circle graph shows my knowledge and allows you to explore these areas by clicking on each one.
-            </br>
-            Go ahead and start exploring!
+            These are the projects that I've been working on during my time at the Academy of Interactive Entertainment!'
         </p>
         <div id="container" style="position:absolute; left:0px; top:150px;" onmousemove="userMouse.updateMousePosition(event)">
             <canvas id="myCanvas" width="700" height="450"> Whoa! You ain't rendering the canvas! Get a better browser, fool!</canvas>
@@ -32,7 +39,7 @@
         var canvasWidth = mainCanvas.width;
         var canvasHeight = mainCanvas.height;
          
-        var frameCtrl = new frameController();
+        var frameCtrl = new projectPageFrameController();
 
         var userMouse = new mouse();
 
