@@ -1,0 +1,35 @@
+<b>Education</b><br>
+<b>BS in Computer Science</b><br>                                                                            
+University of Alaska Fairbanks (UAF), Fairbanks, AK<br> 
+<b>Advanced Diploma of Professional Game Development</b>			Expected 2018<br>
+Academy of Interactive Entertainment (AIE), Seattle, WA<br><br>
+
+<b>Employment History</b>
+<b>IT Technician (Student Assistant C)</b>                                          January 2012 - January 2014<br>
+UAF Office of Information Technology, Fairbanks, AK<br>
+-	Performed installation, maintenance, updates, and troubleshooting with both Macs and PCs, as well as the equipment in smart classrooms<br> 
+-	Used ticket-handling software<br>
+-	Manned the public computer lab help desks<br>
+-	Assisted customers, communicating how to use the technology in smart classrooms<br>
+-	Responded to classroom equipment problems over an intercom and in-person<br>
+iOS App Developer (Research Project Assistant)                           January 2014 - July 2015<br>
+Arctic Region Supercomputing Center (ARSC), Fairbanks, AK<br>
+-	Worked the front desk and used the ticket-handling software of the department<br>
+-	Worked in Mac and Linux environments<br>
+-	Produced an iOS app from concept to finish<br>
+-	Learned PHP, Objective C, Swift, iOS design, XML format, and using MySql databases<br><br>
+<b>Projects</b><br>
+<b>Dinaki Adventures Game</b>                   2014 - 2015<br>
+Telida Village Council, Fairbanks, AK<br>
+-	Designed a point-and-click game with separate profiles, reward items, and an editor<br>
+-	Can be found on GitHub at https://github.com/spbond/language-game<br> 
+-	Can be downloaded from https://app.box.com/s/oe7o68p46hrhe4ofd8tl1lscjoaehkln<br><br> 
+
+<b>Technical/Programming Skills</b><br> 
+<b>IT Tech:_____________________________Systems:______________________General:</b><br>
+Issue Tracking Software_________________Windows___________________Troubleshooting and Problem Solving<br>
+Installation____________________________Mac___________________________Software Development<br>
+Maintenance__________________________Linux__________________________Software Documentation<br>
+Communication Skills_________________________________________________Programming<br>
+Troubleshooting______________________________________________________Coding and Scripting<br>
+										     

@@ -1,0 +1,153 @@
+﻿body {
+    background: url("Images/Cartoon_wood copy.png") 0 0 repeat;
+    background-size: 1200px 1200px;
+}
+
+p {
+    color:black;
+    font-size:1.25vw;
+}
+
+a:link, a:visited
+{
+    color:darkblue;
+}
+
+a:hover
+{
+    color:blue;
+}
+
+a:active
+{
+    color:darkblue;
+}
+
+.iOS
+{
+    background-image:url('Images/iOS_Menu_Screen.png');
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    position:absolute;
+    top:0%;
+    width:20%;
+    height:60%;
+    float:left;
+}
+
+.iOS_Active
+{
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    position:absolute;
+    top:0%;
+    width:35%;
+    height:90%;
+    left:5%;
+}
+
+.iOS_Menu_Button
+{
+    position:relative;
+    width:100%;
+    height:7.5%;
+    top:0%;
+    left:0%;
+}
+
+.iOS_Article_Button
+{
+    position:relative;
+    width:100%;
+    height:8.5%;
+    top:0%;
+    left:0%;
+}
+
+.iOS_Back
+{
+    position:absolute; 
+    top:3%;
+    left:-3%;
+    width:23%;
+    height:5%;
+    float:left;
+}
+
+.iOS_Info_Box
+{
+    background-image:url('Images/Paper_Stack.png');
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    position:absolute;
+    top:1%;
+    right:3%;
+    width:43%;
+    height:50%; 
+    float:right;
+    padding:3%;
+    color:black;
+    font-size:1.20vw;
+}
+
+.info_Box_Text
+{
+    color:black;
+    font-size:1.25vw;
+}
+
+.CheckerBoard
+{
+     background-image:url('Images/CheckerBoardBox.png');
+     background-size:contain;
+     background-position:center center;
+     background-repeat:no-repeat;
+     position:absolute;
+     top:-10%;
+     left:25%;
+     width:30%;
+     height:70%;
+     float:left;
+}
+
+.Book
+{
+    background-image:url('Images/Blue_Book.png');
+    background-size:contain;
+    position:absolute;
+    top:10%;
+    right:0%;
+    width:30%;
+    height:70%;
+    float:right;
+    background-repeat:no-repeat;
+}
+
+.Menu_Bar
+{
+    background-image:url('Images/Menu_Bar.png');
+    background-size:cover;
+    position:fixed;
+    bottom:0%;
+    right:0%;
+    width:52%;
+    height:16%;
+    float:left;
+    background-repeat:no-repeat;
+}
+
+.iOS_Menu_Bar
+{
+    background-image:url('../Images/Menu_Bar.png');
+    background-size:cover;
+    position:fixed;
+    bottom:0%;
+    right:0%;
+    width:52%;
+    height:16%;
+    float:left;
+    background-repeat:no-repeat;
+}

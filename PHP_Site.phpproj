@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>PHP_Site</Name>
+    <ProjectGuid>c13a01d9-b20b-494e-a6b0-2c6d2967ae93</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>PHP_Site</AssemblyName>
+    <SpecificPageValue>index.php</SpecificPageValue>
+    <StartAction>SpecificPage</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Canvas.php" />
+    <Compile Include="Dinaki_Adventures.php" />
+    <Compile Include="Checkerboard.php" />
+    <Compile Include="Folder.php" />
+    <Compile Include="iOS_Pages\iOS_Map.php" />
+    <Compile Include="iOS_Pages\iOS_Articles.php" />
+    <Compile Include="iOS_Pages\iOS_About.php" />
+    <Compile Include="iOS_Pages\iOS_Ask.php" />
+    <Compile Include="iOS_Pages\iOS_Videos_Watching.php" />
+    <Compile Include="iOS_Pages\iOS_Videos.php" />
+    <Compile Include="iOS_Pages\iOS_Research.php" />
+    <Compile Include="iOS_Pages\iOS_Menu.php" />
+    <Compile Include="index.php" />
+    <Compile Include="PokeGameIntro.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Script.js" />
+    <Content Include="PokeGame.php" />
+    <Content Include="OfficeDesk.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="iOS_Pages\" />
+  </ItemGroup>
+</Project>
