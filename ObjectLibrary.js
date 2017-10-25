@@ -3,13 +3,30 @@
     this.y = Number(y);
 }
 
+function Color(r, g, b, a) {
+    this.r = Number(r);
+    this.g = Number(g);
+    this.b = Number(b);
+    this.a = Number(a);
+}
+
 function mag(v0) {
     var result = Number(Math.sqrt(v0.x * v0.x + v0.y * v0.y));
     return result;
 }
 
 function diff(v0, v1) {
-    var result = new Vec2(v1.x - v0.x, v1.y - v0.y);
+    var result = new Vec2(Math.abs(v1.x - v0.x), Math.abs(v1.y - v0.y));
+    return result;
+}
+
+function add(v0, v1) {
+    var result = new Vec2(v1.x + v0.x, v1.y + v0.y);
+    return result;
+}
+
+function sub(v0, v1) {
+    var result = new Vec2(v0.x - v1.x, v0.y - v1.y);
     return result;
 }
 
@@ -21,6 +38,9 @@ function Circle(pos, rot, rad, col) {
     this.draw = function (canvasContext) {
         drawCircle(canvasContext, this.pos.x, this.pos.y, this.rad, this.col);
     }
+    this.collisionWithPoint = function(point) {
+        return circleColldidedWithPoint(pos, rad, point);
+    }
 }
 
 function drawCircle(canvasContext, posX, posY, radius, color) {
@@ -30,8 +50,15 @@ function drawCircle(canvasContext, posX, posY, radius, color) {
     canvasContext.closePath();
 
     // color in the circle
-    canvasContext.fillStyle = color;
+    canvasContext.fillStyle = "rgb(" + color.r + ", " + color.g + ", " + color.b + ")";
     canvasContext.fill();
+}
+
+function circleColldidedWithPoint(pos, rad, point) {
+    var dist = mag(diff(pos, point));
+    if (dist <= rad)
+        return true;
+    return false;
 }
 
 function drawHalfCircle(canvasContext, posX, posY, radius, color) {
@@ -41,7 +68,7 @@ function drawHalfCircle(canvasContext, posX, posY, radius, color) {
     canvasContext.closePath();
 
     // color in the circle
-    canvasContext.fillStyle = color;
+    canvasContext.fillStyle = "rgba(" + color.r + ", " + color.g + ", " + color.b + ", " + color.a + ")";
     canvasContext.fill();
 }
 
@@ -90,13 +117,12 @@ function drawEmptySquare(canvasContext, posX, posY, width, height, color) {
     canvasContext.stroke();
 }
 
-function mouse()
-{
+function mouse() {
     this.x = Number(0);
     this.y = Number(0);
 
-    this.updateMousePosition = function(e)
-    {
+
+    this.updateMousePosition = function (e) {
 
         e = e || window.event;
 
@@ -110,10 +136,12 @@ function mouse()
         }
     }
 
-    this.getMouseCoords = function()  {
+    this.getMouseCoords = function () {
         return new Vec2(this.x, this.y);
     }
 }
+
+
 
 function frameController()
 {
@@ -144,7 +172,7 @@ function frameController()
 
     this.dist = new Vec2(100, 100);
 
-    this.c0 = new Circle(new Vec2(100, 100), 0, 20, "rgb(0, 0, 255)");
+    this.c0 = new Circle(new Vec2(100, 100), 0, 20, new Color(0, 0, 255, 255));
 
     this.animFrame = function(mainContext, canvasWidth, canvasHeight, currTime, mouse) {
         mainContext.clear

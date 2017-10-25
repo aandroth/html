@@ -36,34 +36,37 @@
         var mainCanvas = document.getElementById("myCanvas");
         var mainContext = mainCanvas.getContext("2d");
  
-        var canvasWidth = mainCanvas.width;
-        var canvasHeight = mainCanvas.height;
+        var canvasWidthAndHeight = new Vec2(mainCanvas.width, mainCanvas.height);
+        var rect = mainCanvas.getBoundingClientRect();
+        var canvasOffset = new Vec2(rect.left, rect.top);
          
         var frameCtrl = new projectPageFrameController();
 
         var userMouse = new mouse();
-
-        mainContext.fillStyle = "#000000";
-        mainContext.fillRect(50, 50, canvasWidth, canvasHeight);
         
         var time = (new Date()).getTime();
         var currTime = 0;
-
-        // color in the background
-        mainContext.fillStyle = "#EEEEEE";
-        mainContext.fillRect(0, 0, canvasWidth, canvasHeight);
 
         var posX = 0 + Math.sin(time / 1000);
         //
         var posY = 0 + Math.sin(time / 1000);
         //console.log(time + ", " + time);
 
+        mainCanvas.addEventListener("mousedown", onMouseDownAction, false);
+
       setInterval(function() {
         time = (new Date()).getTime();
         currTime += 0.01;
-        if(frameCtrl.animFrame(mainContext, canvasWidth, canvasHeight, currTime, userMouse))
+        if(frameCtrl.animFrame(mainContext, canvasWidthAndHeight, canvasOffset, currTime, userMouse))
             currTime = 0;
       }, 1);
+
+      
+    function onMouseDownAction(e) {
+        //alert(e.pageX + ", " + e.pageY);
+        var coords = new Vec2(e.pageX, e.pageY);
+        frameCtrl.checkCircleListForCollisionsWithPoint(sub(coords, canvasOffset));
+    }
     </script>
 </body>
 </html>
