@@ -1,9 +1,68 @@
-﻿body {
+body {
     background: url("Images/Cartoon_wood copy.png") 0 0 repeat;
     background-size: 1200px 1200px;
 }
 
 p {
+    color:white;
+    font-size:30px;
+}
+
+a:link, a:visited
+{
+    color:lightblue;
+}
+
+a:hover
+{
+    color:blue;
+}
+
+a:active
+{
+    color:lightblue;
+}
+
+.iOS
+{
+    background-image:url('images/ios_menu_screen.png');
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    position:absolute;
+    top:0%;
+    width:20%;
+    height:60%;
+    float:left;
+}
+
+.CheckerBoard
+{
+     background-image:url('images/checker_board.png');
+     background-size:contain;
+     background-position:center center;
+     background-repeat:no-repeat;
+     position:absolute;
+     top:10%;
+     left:25%;
+     width:40%;
+     height:70%;
+     box-shadow:5% 5% 15px #000000;
+     float:left;
+}
+
+.Book
+{
+    background-image:url('Images/Blue_Book.png');
+    background-size:contain;
+    position:absolute;
+    top:10%;
+    right:5%;
+    width:30%;
+    height:70%;
+    float:right;
+    background-repeat:no-repeat;
+}
     color:black;
     font-size:1.25vw;
 }
