@@ -1,6 +1,7 @@
 <?php
-    echo "_";
+    
 ?>
+
 </*
  ProjectsPage presents my AIE projects
  *
@@ -26,7 +27,7 @@
 <body>
     <div>
         <p>
-            These are the projects that I've been working on during my time at the Academy of Interactive Entertainment!'
+            These are the projects that I've been working on during my time at the Academy of Interactive Entertainment!
         </p>
         <div id="container" style="position:absolute; left:0px; top:150px;" onmousemove="userMouse.updateMousePosition(event)">
             <canvas id="myCanvas" width="700" height="450"> Whoa! You ain't rendering the canvas! Get a better browser, fool!</canvas>
@@ -66,6 +67,7 @@
         //alert(e.pageX + ", " + e.pageY);
         var coords = new Vec2(e.pageX, e.pageY);
         frameCtrl.checkCircleListForCollisionsWithPoint(sub(coords, canvasOffset));
+        frameCtrl.checkLinesForCollisionsWithPoint(sub(coords, canvasOffset));
     }
     </script>
 </body>

@@ -25,15 +25,15 @@ function projectPageFrameController() {
 
     // Create the page list of all of the projects that I created at AIE
     this.pageList = [];
-    this.pageList.push('Hash_Tables');
-    this.pageList.push('Hash_Tables');
+    this.pageList.push('unity_test');
+    this.pageList.push('unity_test');
     this.pageList.push('Hash_Tables');
     this.pageList.push('Hash_Tables');
     this.pageList.push('Hash_Tables');
     this.pageList.push('Hash_Tables');
     this.pageList.push('Hash_Tables');
 
-    alert(this.pageList.length);
+    //alert(this.pageList.length);
 
     this.circleList = [];
     this.textList = [];
@@ -54,9 +54,17 @@ function projectPageFrameController() {
 
     this.checkCircleListForCollisionsWithPoint = function (point) {
         for (var ii = 0; ii < this.circleListLength; ++ii) {
-            if(this.circleList[ii].collisionWithPoint(point))
-            {
-                window.location.href = this.pageList[ii]+'.php';
+            if (this.circleList[ii].collisionWithPoint(point)) {
+                window.location.href = this.pageList[ii] + '.php';
+            }
+        }
+    }
+
+    this.checkLinesForCollisionsWithPoint = function (point) {
+        for (var ii = 0; ii < this.circleListLength; ++ii) {
+            if (this.circleList[ii].pos.y + this.circleList[ii].rad >= point.y &&
+                this.circleList[ii].pos.y - this.circleList[ii].rad <= point.y) {
+                window.location.href = this.pageList[ii] + '.php';
             }
         }
     }
@@ -76,9 +84,7 @@ function projectPageFrameController() {
         var distMultiplier = 5;
         for (var ii = 0; ii < this.circleListLength; ++ii) {
 
-            mainContext.fillText(this.pageList[ii], 100, (this.circleList[ii].pos.y + 20));
-
-            this.dist = diff(this.circleList[ii].pos, mousePosOnCanvas);
+            this.dist = diff(new Vec2(mousePosOnCanvas.x, this.circleList[ii].pos.y), mousePosOnCanvas);
         
             if (mag(this.dist) < this.circleList[ii].rad * distMultiplier) {
                 this.circleList[ii].col = new Color(255 * (mag(this.dist) / (this.circleList[ii].rad * distMultiplier)),
@@ -91,6 +97,8 @@ function projectPageFrameController() {
 
             this.circleList[ii].draw(mainContext);
 
+            mainContext.fillText(this.pageList[ii], 100, (this.circleList[ii].pos.y + 20));
+
             mainContext.beginPath();
             mainContext.arc(this.circleList[ii].pos.x, this.circleList[ii].pos.y, 20, 0, Math.PI * 2, false);
             //mainContext.arc(mousePosOnCanvas.x, mousePosOnCanvas.y, 20, 0, Math.PI * 2, false);
@@ -99,13 +107,13 @@ function projectPageFrameController() {
             mainContext.stroke();
         }
 
-        this.c0.draw(mainContext);
-        mainContext.beginPath();
-        mainContext.arc(this.c0.pos.x, this.c0.pos.y, 20, 0, Math.PI * 2, false);
-        //mainContext.arc(mousePosOnCanvas.x, mousePosOnCanvas.y, 20, 0, Math.PI * 2, false);
-        mainContext.closePath();
-        mainContext.strokeStyle = "rgb(0, 0, 255)";
-        mainContext.stroke();
+        //this.c0.draw(mainContext);
+        //mainContext.beginPath();
+        //mainContext.arc(this.c0.pos.x, this.c0.pos.y, 20, 0, Math.PI * 2, false);
+        ////mainContext.arc(mousePosOnCanvas.x, mousePosOnCanvas.y, 20, 0, Math.PI * 2, false);
+        //mainContext.closePath();
+        //mainContext.strokeStyle = "rgb(0, 0, 255)";
+        //mainContext.stroke();
 
     }
 }

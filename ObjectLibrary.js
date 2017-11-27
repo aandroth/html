@@ -8,6 +8,24 @@ function Color(r, g, b, a) {
     this.g = Number(g);
     this.b = Number(b);
     this.a = Number(a);
+
+    this.AsTextRGB = function () {
+        return "rgb(" + this.r + "," + this.g + "," + this.b + ")";
+    }
+    this.AsTextRGBA = function () {
+        return "rgb(" + this.r + "," + this.g + "," + this.b + "," + this.a + ")";
+    }
+}
+
+var objectlib_color = {
+    r: 0,
+    g: 0,
+    SetColorRGBA: function(new_r, new_g){
+        r = new_r; g = new_g;
+    },
+    AsTextRGB: function () {
+        return "rgb(" + r + "," + g + ")";
+    }
 }
 
 function mag(v0) {
@@ -30,6 +48,18 @@ function sub(v0, v1) {
     return result;
 }
 
+function dot(v0, v1) {
+    var result = v0.x * v1.x + v0.y * v1.y;
+    return result;
+}
+
+function angleBetweenVectors(v0, v1) {
+    var numerator = dot(v0, v1);
+    var denominator = mag(v0) * mag(v1);
+    var result = Math.acos(numerator / denominator);
+    return result;
+}
+
 function Circle(pos, rot, rad, col) {
     this.pos = new Vec2(pos.x, pos.y);
     this.rot = Number(rot);
@@ -43,6 +73,9 @@ function Circle(pos, rot, rad, col) {
     }
 }
 
+// drawCircle
+// Draws a circle
+// canvas context, float pos x, float pos y, float radius, Color (custom, see ObjectLibrary.js) color
 function drawCircle(canvasContext, posX, posY, radius, color) {
     // draw the circle
     canvasContext.beginPath();
@@ -50,7 +83,7 @@ function drawCircle(canvasContext, posX, posY, radius, color) {
     canvasContext.closePath();
 
     // color in the circle
-    canvasContext.fillStyle = "rgb(" + color.r + ", " + color.g + ", " + color.b + ")";
+    canvasContext.fillStyle = color.AsTextRGB();
     canvasContext.fill();
 }
 

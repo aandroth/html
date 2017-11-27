@@ -1,5 +1,5 @@
 <?php
-    echo "&nbsp;";
+    
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -86,7 +86,7 @@
         determineHeight('iOS', 1.25);
         determineHeight('CheckerBoard', 0.5);
         determineHeight('Book', 1.1);
-        determineHeight('Poke', 1);
+        determineHeight('Poke', 1.0);
         determineHeight('DrawPad', 1.5);
         determineHeight('Folder', 0.815);
         determineHeight('Menu_Bar', 0.15);
