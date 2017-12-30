@@ -21,6 +21,7 @@
   <ItemGroup>
     <Compile Include="Canvas.php" />
     <Compile Include="CheckersGame.php" />
+    <Compile Include="DesignPatterns_FactoryPattern.php" />
     <Compile Include="Dinaki_Adventures.php" />
     <Compile Include="Checkerboard.php" />
     <Compile Include="Circle_Graph.php" />
@@ -38,6 +39,8 @@
     <Compile Include="unity_test.php" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Checkerboard.js" />
+    <Content Include="DesignPatterns_FactoryPattern.js" />
     <Content Include="GraphicsLearning_DotProduct.js" />
     <Content Include="jsconfig.json" />
     <Content Include="ObjectLibrary.js" />

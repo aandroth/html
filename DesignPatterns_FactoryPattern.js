@@ -13,7 +13,7 @@ function detectLeftButton(evt) {
 function graphicsPageFrameController() {
 
     this.dist = new Vec2(100, 100);
-    
+
     this.mouseClickPos = new Vec2(100, 100);
     this.centerPt = new Vec2();
     this.c0 = new Circle(new Vec2(50, 50), 0, 5, new Color(0, 0, 255, 255));

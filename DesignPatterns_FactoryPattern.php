@@ -19,21 +19,29 @@
     <title>&dagger;Aquin's Great Games&dagger;</title>
     <link rel="stylesheet" type="text/css" href="OfficeDesk.scss" />
     <script src="ObjectLibrary.js" ></script>
-    <script src="GraphicsLearning_DotProduct.js" ></script>
+    <script src="DesignPatterns_FactoryPattern.js" ></script>
     <script>
         var startTime = (new Date()).getTime();
     </script>
 </head>
 <body>
     <div>
-        <form>
-            <div class="degreesInput">
-                Degrees_Blue:
-                <input id="degrees0" type="number" name="degrees0" size="3" value="0" min="0" max="360">
-                Degrees_Orange:
-                <input id="degrees1" type="number" name="degrees1" size="3" value="0" min="0" max="360">
-            </div>
-        </form>
+        <h1>
+            DESIGN PATTERNS
+        </h1>
+        <h2>
+            FACTORY PATTERN
+        </h2>
+        <p>
+            In design patterns, the factory pattern is a way to create multiple objects from a single source object or function. 
+            For example, we could have a generic class like "Shape" or "Animal" that can be inherited from, creating new objects,
+            such as "Circle", "Triangle", and "Square" fro "Shape", and "Monkey", "Tiger", and "Lizard" for "Animal". 
+            It's also easy to see how each of these could also be the object to be inherited for use by other objects.
+            To see how this design pattern works with inheritence, put some of the functions into the bucket representing the Shape class.
+            Every function that goes into the bucket is then in the buckets for each of the classes that inherit from Shape.
+            Another way that the Factory Pattern can be used is with components. 
+            By having each function be a component that can be added to a base class, we can create many different kinds of objects with just one class.
+        </p>
         <div id="container" style="position:absolute; left:0px; top:150px;" onmousemove="userMouse.updateMousePosition(event)">
             <canvas id="myCanvas" width="700" height="450"> Whoa! You ain't rendering the canvas! Get a better browser, fool!</canvas>
         </div>
@@ -58,17 +66,10 @@
         //
         var posY = 0 + Math.sin(time / 1000);
         //console.log(time + ", " + time);
-        
-        var newDegrees0 = document.querySelector('#degrees0').value;
-        var newDegrees1 = document.querySelector('#degrees1').value;
 
       setInterval(function() {
         time = (new Date()).getTime();
         currTime += 0.01;
-        
-        newDegrees0 = document.querySelector('#degrees0').value;
-        newDegrees1 = document.querySelector('#degrees1').value;
-        frameCtrl.SetDegrees(newDegrees0, newDegrees1);
 
         if(frameCtrl.animFrame(mainContext, canvasWidthAndHeight, canvasOffset, currTime, userMouse))
             currTime = 0;

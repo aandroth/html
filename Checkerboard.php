@@ -10,9 +10,12 @@
     <title>&dagger;Aquin's Great Games&dagger;</title>
     <link rel="stylesheet" type="text/css" href="../../OfficeDesk.scss" />
     <script src="../../Script.js"></script>
+    <script src="Checkerboard.js"></script>
+    <script src="ObjectLibrary.js" ></script>
 </head>
 <body>
-    <div class="checkerBoard" style="background-image:url('../Images/Checker_Board.png'); background-size:cover; position:relative; top:10%; left:5%; width:40%; height:45%; float:left; background-repeat:no-repeat;">
+    <div class="checkerBoard" id="checkerboard" <!--style="background-image:url('../Images/Checker_Board.png')-->; background-size:cover; position:relative; top:10%; left:5%; width:40%; height:45%; float:left; background-repeat:no-repeat;">
+            <canvas id="myCanvas" width="700" height="700"> Whoa! You ain't rendering the canvas! Get a better browser, fool!</canvas>
     </div>
     <div class="infoBox" style="background-image:url('Images/Paper_Stack_Tall.png'); background-size:contain; background-position:center center; background-repeat:no-repeat; position:absolute; top:2%; right:5%; width:35%; height:90%; float:right; padding:5%;">
         <h1 style="color:black; text-align:center">
@@ -64,6 +67,35 @@
         determineHeight('infoBox',0.7);
         //scaleTextByScreenWidth('info_Box_Text', 30);
         determineHeight('Menu_Bar', 0.15);
+
+        var mainCanvas = document.getElementById("myCanvas");
+        var mainContext = mainCanvas.getContext("2d");
+ 
+        var canvasWidthAndHeight = new Vec2(mainCanvas.width, mainCanvas.height);
+        var rect = mainCanvas.getBoundingClientRect();
+        var canvasOffset = new Vec2(rect.left, rect.top);
+         
+        var frameCtrl = new checkerboardFrameController(canvasWidthAndHeight);
+        frameCtrl.windowCenter = new Vec2(canvasWidthAndHeight.x / 2.0, canvasWidthAndHeight.y / 2.0);
+
+        var userMouse = new mouse();
+        
+        var time = (new Date()).getTime();
+        var currTime = 0;
+
+        var posX = 0 + Math.sin(time / 1000);
+        //
+        var posY = 0 + Math.sin(time / 1000);
+        //console.log(time + ", " + time);
+
+      setInterval(function() {
+        time = (new Date()).getTime();
+        currTime += 0.01;
+
+
+        if(frameCtrl.animFrame(mainContext, canvasWidthAndHeight, canvasOffset, currTime, userMouse))
+            currTime = 0;
+      }, 1);
     </script>
 </body>
 </html>
