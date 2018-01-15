@@ -23,14 +23,29 @@ a:active
     color:lightblue;
 }
 
+.infoBox0
+{
+    font-size:1.25vw;
+    position:relative;
+    top:-5%; 
+    color:black;
+}
+
+h1.infoBox0
+{
+    font-size:1.5vw;        
+    border-bottom-style:solid;
+    border-width:2px;
+}
+
 .iOS
 {
     background-image:url('images/ios_menu_screen.png');
     background-size:contain;
-    background-position:center center;
+    //background-position:center center;
     background-repeat:no-repeat;
     position:absolute;
-    top:0%;
+    top:10%;
     width:20%;
     height:60%;
     float:left;
@@ -205,8 +220,8 @@ a:active
     position:fixed;
     bottom:0%;
     right:0%;
-    width:52%;
-    height:16%;
+    width:57%;
+    height:13%;
     float:left;
     background-repeat:no-repeat;
 }

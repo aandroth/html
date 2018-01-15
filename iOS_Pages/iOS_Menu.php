@@ -34,10 +34,10 @@
             </div>
         </div>
     </div>
-    <div class="iOS_Info_Box" style="position:relative;">
+    <div class="iOS_Info_Box" style="height:70%; background-size:100% 100%;">
         <h1 style="color:black; text-align:center">
             Main Menu
-        </h1>    
+        </h1>
         <p class="info_Box_Text">
             This app was created for the news group, Frontier Scientists, by student workers at the Artcic Region Supercomputing Center. 
             The purpose of this app is to take the information from Frontier Scientists' website, 
@@ -88,7 +88,7 @@
     </div>
     <script>
         determineHeight('iOS_Active', 1.27);
-        determineHeight('iOS_Info_Box', 0.7);
+//        determineHeight('iOS_Info_Box', 1.2);
         //scaleTextByScreenWidth('info_Box_Text', 29);
         determineHeight('Menu_Bar', 0.15);
     </script>
