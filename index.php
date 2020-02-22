@@ -1,5 +1,5 @@
 <?php
-    
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -26,7 +26,7 @@
             <img src="Images/iOS_Screen_Highlight.png" style="position:absolute; top:0%; left:0%; max-width:100%; max-height:100%;"/>
         </div>
     </div>
-    <div class="DrawPad" onmouseup="mouseUp('Canvas.php')" onmouseout="mouseOut('NB_Highlight')" onmouseover="mouseOver('NB_Highlight')" style="background-image:url('Images/Notepad.png'); background-size:cover; position:absolute; top:30%; left:3%; width:12%; height:28%; float:left; box-shadow:5px 10px 15px #000000; background-repeat:no-repeat;">
+    <div class="DrawPad" onmouseup="mouseUp('Canvas.php')" onmouseout="mouseOut('NB_Highlight')" onmouseover="mouseOver('NB_Highlight')" style="background-image:url('Images/Notepad.png'); background-size:cover; position:absolute; top:50%; left:3%; width:12%; height:28%; float:left; box-shadow:5px 10px 15px #000000; background-repeat:no-repeat;">
         <div id="NB_Highlight" style="visibility:hidden; pointer-events:none; position:absolute; top:0px; left:0px; width:100%; height:102%; float:left;">
             <img src="Images/Notepad_Highlight.png" style="height:100%; width:100%"/>
         </div>
@@ -87,10 +87,10 @@
         determineHeight('CheckerBoard', 0.5);
         determineHeight('Book', 1.1);
         determineHeight('Poke', 1.0);
-        determineHeight('DrawPad', 1.5);
+        determineHeight('DrawPad', 1.75);
         determineHeight('Folder', 0.815);
         determineHeight('Menu_Bar', 0.15);
-        document.getElementsByClassName('DrawPad')[0].style.top = document.getElementsByClassName('iOS')[0].offsetTop + document.getElementsByClassName('iOS')[0].offsetHeight + (window.innerHeight * 0.05);
+        document.getElementsByClassName('DrawPad')[0].style.top = document.getElementsByClassName('iOS')[0].offsetTop + document.getElementsByClassName('iOS')[0].offsetHeight + (window.innerHeight * 0.25);
     </script>
 </body>
 </html>

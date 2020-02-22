@@ -21,11 +21,10 @@
             </h1>
             <p class="info_Box_Text0" style="color:black;">
                 Dinaki Adventures is a point-and-click language-learning game, developed for the Telida Village Council of Alaska.
-                The first screen is the profile screen where players create or choose their profile. 
-                The next screen is the world map, which shows all of the game's locations, some of which are locked.
-                The player then chooses a location to go to, which brings them to a scene, a screen showing the location.
-                The player then chooses items in the scene to go to an activity, 
-                where they can associate English words or images with the written and spoken Dinaki words.
+                The player creates a profile, and is then able to choose locations on a map.
+		These locations can be locked, requiring the player to complete other locations first.
+                Each location can have several minigames,
+                where the player will associate English words or images with the written and spoken Dinaki words.
             </p>
         </div>
         <div style="position:absolute; top:7%; right:10%; width:35%; height:90%; float:right; padding:3%;">
@@ -35,8 +34,8 @@
             <p class="info_Box_Text1" style="color:black;">
                 The Dinaki Adventures Editor is where the game levels are created.
                 The interface was made using Qt, and allows the user to choose all aspects of the game and levels.
-                The user can choose the minigame type, what levels are locked and the badges required to unlock them, and the art for the screens.
-                The words are also created here, with the user choosing their spelling, male and female pronounciation, and a representing image. 
+                The user can choose the minigame type, what levels are locked and what is required to unlock them.
+                The word libraries are also created here, with the user choosing their spelling, male and female pronounciation, and a representing image. 
                 Because the user of the editor has so much control, it can really be used by any group for any language.
                 The game and editor can be downloaded from my <a href="https://app.box.com/s/oe7o68p46hrhe4ofd8tl1lscjoaehkln">box.com files</a>,
                 and the source code can be found on <a href="https://github.com/spbond/language-game ">Github</a>, in a repo created
@@ -78,8 +77,8 @@
 </body>
     <script>
         determineHeight('book', 0.6);
-       // scaleTextByScreenWidth('info_Box_Text0', 28);
-        //scaleTextByScreenWidth('info_Box_Text1', 28);
+        scaleTextByScreenWidth('info_Box_Text0', 24);
+        scaleTextByScreenWidth('info_Box_Text1', 24);
         determineHeight('Menu_Bar', 0.15);
     </script>
 </html>
