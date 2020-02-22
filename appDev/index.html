@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab : -->
+<html>
+  <head>
+    <title>Static Web Applications - Hosted in Your Dropbox</title>
+    <link rel="icon" type="image/png" href="images/icon16.png" />
+    <link rel="stylesheet/less" type="text/css" href="./powered_by.less" />
+    <script type="text/javascript" src="lib/html5shiv.js"></script>
+    <script type="text/javascript" src="lib/coffee-script.js"></script>
+    <script type="text/javascript" src="lib/dropbox.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/less.js"></script>
+    <script type="text/javascript" src="lib/ZeroClipboard.min.js"></script>
+    <script type="text/javascript">
+      ZeroClipboard.setDefaults({moviePath: "lib/ZeroClipboard.swf"});
+    </script>
+    <script type="text/coffeescript" src="./powered_by.coffee"></script>
+  </head>
+  <body>
+    <aside id="error-notice" class="hidden">
+      <form action="#" method="GET">
+        Something went wrong :(
+        <button type="submit" id="error-refresh-button">
+          <img src="images/refresh.png" /> reload the app
+        </button>
+      </form>
+    </aside>
+    <article id="app-ui" class="hidden">
+      <h1>
+        static web apps
+        <small>powered by
+          <a href="https://www.dropbox.com/developers">dropbox</a>
+        </small>
+      </h1>
+      <div id="notebook-page">
+        <aside id="user-info">
+          <button type="button" id="signout-button">
+            <img src="images/remove.png" alt="" /> Sign out
+          </button>
+          <span id="user-name" />
+        </aside>
+
+        <form action="" method="GET" id="new-app-form">
+          <input type="text" id="new-app-name" class="app-name"
+                 required="required" placeholder="e.g., my_awesome_app" />
+           <button type="submit" id="new-app-button">
+             <img src="images/add.png" /> Add
+           </button>
+        </form>
+        <ol class="app-list" id="active-app-list"></ol>
+      </div>
+    </article>
+
+    <script type="text/html" id="app-template">
+      <li class="app">
+        <div class="app-header">
+          <span class="app-name" />
+          <div class="app-actions">
+            <span class="app-copy-container">
+            <button type="button" class="app-copy-button"
+                    disabled="disabled">
+                <img src="images/copy.png" alt="" /> Copy URL
+              </button>
+            </span>
+            <form action="https://twitter.com/intent/tweet" target="_blank"
+                  method="GET" class="app-tweet-form">
+              <input type="hidden" name="text" value="Check out my Web app!" />
+              <input type="hidden" name="via" value="dropbox" />
+              <input type="hidden" name="url" />
+              <button type="submit" class="app-tweet-button"
+                      disabled="disabled">
+                <img src="images/twitter.png" alt="" /> Tweet URL
+              </button>
+            </form>
+            <button type="button" class="app-remove-button">
+              <img src="images/remove.png" alt="" /> Delete App
+            </button>
+          </div>
+        </div>
+        <ol class="app-urls">
+          <li class="app-url-li">
+            <a class="app-url-link" target="_blank" href="">
+              <img src="images/url.png" alt="" /> App URL
+            </a>
+            <input type="url" disabled="disabled" value="loading..."
+                   class="app-url" />
+          </li>
+          <li class="app-url-li">
+            <a class="app-source-url-link" target="_blank" href="">
+              <img src="images/source.png" alt="" /> Source URL
+            </a>
+            <input type="url" disabled="disabled" value="loading..."
+                   class="app-source-url" />
+          </li>
+          <li class="app-empty-url-li">
+            &nbsp;
+          </li>
+        </ol>
+      </li>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <title>Nonreact App</title>
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div>
+
+        <div>
+
+            <textarea id="note-text-area" style=" position: absolute; top: 0px; left: 0px; height: 50%; width: 50%; "></textarea>
+
+            <img src="spy.png" alt="Image not found!" style="position: absolute; top: 10%; right:  15%; width: 15% ; padding-top: 0%; "/>
+
+            <button onClick="parseNames()" style=" position: absolute; top: 45%; right: 12%; height: 5%; width: 20% ">KILL Assignments</button>
+
+            <p style=" color: white; position: absolute; top: 55%; left: 1%; width: 50%; font-size: 2vw; ">
+
+                Enter in names separated by a comma. Then click the button and let the assassins get to work!
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+        function parseNames() {
+
+            let leftNote = document.getElementById("note-text-area");
+
+            console.log("Took the content from the textarea: " + leftNote.value);
+
+            let availableTargets = leftNote.value.split(',');
+            console.log("Got the available targets");
+
+            let newList = "";
+
+            let Assassin = availableTargets.pop().trim();
+            console.log("First assassin is " + Assassin);
+
+            let first = Assassin;
+            console.log("Asigned assassin to first");
+
+            var count = availableTargets.length;
+
+            console.log("Got the count: " + count);
+
+            while (availableTargets.length > 0) {
+                console.log("Top of the while loop");
+
+                let randomNum = Math.floor(Math.random() * availableTargets.length);
+
+                console.log("randomNum:" + randomNum);
+
+                let chosenTarget = availableTargets[randomNum].trim();
+
+                availableTargets.splice(randomNum, 1);
+
+                newList += Assassin + " kills " + chosenTarget + ",\n\r";
+
+                Assassin = chosenTarget;
+
+            }
+
+            newList += Assassin + " kills " + first;
+
+            leftNote.value = newList;
+
+        }
+    </script>
+</body>
+</html>
